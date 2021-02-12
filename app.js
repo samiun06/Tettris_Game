@@ -181,7 +181,7 @@ function DrawTetromino(){
 function HandleKeyPress(key){
     if(winOrLose != "Game Over"){
     // a keycode (LEFT)
-    if(key.keyCode === 37){
+    if(key.keyCode === 37 || key.keyCode === 65){
         // 4. Check if I'll hit the wall
         direction = DIRECTION.LEFT;
         if(!HittingTheWall() && !CheckForHorizontalCollision()){
@@ -191,7 +191,7 @@ function HandleKeyPress(key){
         } 
  
     // d keycode (RIGHT)
-    } else if(key.keyCode === 39){
+    } else if(key.keyCode === 39 || key.keyCode === 68){
         
         // 4. Check if I'll hit the wall
         direction = DIRECTION.RIGHT;
@@ -202,10 +202,10 @@ function HandleKeyPress(key){
         }
  
     // s keycode (DOWN)
-    } else if(key.keyCode === 40){
+    } else if(key.keyCode === 40 || key.keyCode === 83){
         MoveTetrominoDown();
         // 9. e keycode calls for rotation of Tetromino
-    } else if(key.keyCode === 38){
+    } else if(key.keyCode === 38 || key.keyCode === 69){
         RotateTetromino();
     }
     } 
